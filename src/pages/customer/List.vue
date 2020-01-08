@@ -28,10 +28,9 @@
 
         <!-- 模态框 -->
         <el-dialog
-            title="录入顾客信息"
+            :title="title"
             :visible.sync="visible"
             width="60%">
-            ---{{form}}
             <el-form :model="form" label-width="80px">
                 <el-form-item label="用户名">
                     <el-input v-model="form.username"></el-input>
@@ -114,6 +113,7 @@ export default {
         })
         },
         toUpdateHandler(row){
+            this.title = "修改顾客信息";
             //模态框表单中显示当前行的信息
             this.form = row;
             this.visible = true;
@@ -122,6 +122,7 @@ export default {
             this.visible = false;
         },
         toAddHandler(){
+            this.title = "录入顾客信息";
             //将form变为初始值
             this.form = {}
             this.visible = true;
@@ -130,6 +131,7 @@ export default {
     //data用户存放要向网页中显示的数据
     data(){
         return{
+            title:"录入顾客信息",
             visible:false,
             customers:[],
             form:{}
