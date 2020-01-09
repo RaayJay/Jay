@@ -1,6 +1,6 @@
 module.exports = {
 
-  title: '家政预约平台',
+  title: 'e猫云平台',
 
   /**
    * @type {boolean} true | false
